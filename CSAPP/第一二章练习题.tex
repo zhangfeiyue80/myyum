@@ -311,7 +311,8 @@ $(x\cdot y)mod\ 2^w-p_{w-1}2^w=x\cdot q+x\cdot ((p/x)mod 1)$	\\
 $x\cdot y=p+t2^w$	\\
 $x\cdot q=p-r$,当y=q时,有$p+t2^{w}=p-r$,有$t2^{w}=-r$,又因为$|r|<|x|\le|2^{w-1}|$,因此,r=t=0,因此有$x\cdot y=p$,计算不溢出.	\\[3ex]
 \textbf{练习题2.37}	\\[1ex]
-A.	\\[3ex]
+A.将乘法值赋值给无符号64位类型变量，避免了乘法溢出	\\
+B.判断asize是否能用无符号32位来表示，如能表示调用malloc函数分配内存;如不能，给出提示，退出	\\[3ex]
 \textbf{练习题2.38}	\\[1ex]
 \begin{math}
 	(a<<k)+b=a*2^k+b
