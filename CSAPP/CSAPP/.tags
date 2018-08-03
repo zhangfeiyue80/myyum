@@ -1,0 +1,38 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.6	//
+MAXLINE	2_31/2_31.c	4;"	d	file:
+MAXLINE	2_36/2_36.c	3;"	d	file:
+MINLINE	2_32/2_32.c	4;"	d	file:
+MINLINE	2_36/2_36.c	4;"	d	file:
+byte_pointer	basic.h	/^typedef unsigned char *byte_pointer;$/;"	t
+fun1	2_23/test.c	/^int fun1(unsigned word){$/;"	f
+inplace_swap	2_11/reverse_array.c	/^void inplace_swap(int *x,int *y){$/;"	f
+main	2_11/reverse_array.c	/^int main(){$/;"	f
+main	2_11/test_scanf.c	/^int main()$/;"	f
+main	2_23/test.c	/^int main(){$/;"	f
+main	2_25/x_sum.c	/^int main(){$/;"	f
+main	2_27/2_27.c	/^int main()$/;"	f
+main	2_30/2_30.c	/^int main()$/;"	f
+main	2_31/2_31.c	/^int main()$/;"	f
+main	2_32/2_32.c	/^int main(void)	{$/;"	f
+main	2_36/2_36.c	/^int main()	{$/;"	f
+reverse_array	2_11/reverse_array.c	/^void reverse_array(int a[],int cnt){$/;"	f
+show_bytes	basic.h	/^void show_bytes(byte_pointer start, size_t len) {$/;"	f
+sum_elements	2_25/x_sum.c	/^float sum_elements(float a[],unsigned length)	{$/;"	f
+tadd_ok	2_30/2_30.c	/^int tadd_ok(int x,int y)$/;"	f
+tadd_ok	basic.h	/^int tadd_ok(int x,int y)$/;"	f
+tadd_ok1	2_31/2_31.c	/^int tadd_ok1(int x,int y)$/;"	f
+tadd_ok2	2_31/2_31.c	/^int tadd_ok2(int x,int y){$/;"	f
+test	2_32/2_32.c	/^int test(void)	{$/;"	f
+test1	2_32/2_32.c	/^int test1(int y)	{$/;"	f
+test2	2_32/2_32.c	/^int test2(int y)	{$/;"	f
+tmult_ok	2_36/2_36.c	/^int tmult_ok(int x,int y)	{$/;"	f
+tmult_ok1	2_36/2_36.c	/^int tmult_ok1(int x,int y)	{$/;"	f
+tsub_ok	2_32/2_32.c	/^int tsub_ok(int x,int y)	{$/;"	f
+tsub_ok_bug	2_32/2_32.c	/^int tsub_ok_bug(int x,int y)	{$/;"	f
+uadd_ok	2_27/2_27.c	/^int uadd_ok(unsigned x,unsigned y)$/;"	f
+uadd_ok	basic.h	/^int uadd_ok(unsigned x,unsigned y)$/;"	f

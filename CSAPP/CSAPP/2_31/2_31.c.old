@@ -1,0 +1,10 @@
+#include <stdio.h>
+
+int main(){
+	int x,y;
+	int flag;
+	printf("请输入两个有符号整数:(以逗号分隔)");
+	scanf("%d,%d",&x,&y);
+	flag=tadd_ok(x,y);
+	if()
+}
