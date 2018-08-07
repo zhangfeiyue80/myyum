@@ -1,6 +1,7 @@
 #include <stdio.h>
 typedef unsigned char *byte_pointer;
-void show_bytes(byte_pointer start, size_t len) {
+void show_bytes(byte_pointer start, size_t len) 
+{
 	size_t i;
 	for (i=0;i<len;i++)
 		printf(" %.2x",start[i]);
@@ -33,5 +34,5 @@ int tadd_ok(int x,int y)
 int posi_neg(int x)
 {
 	unsigned int number=(unsigned int)x;
-	return (number-((number<<1)>>1))>>31;
+	return (int)((number-((number<<1)>>1))>>31);
 }
