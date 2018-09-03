@@ -14,3 +14,4 @@ zhangfeiyue80
 
 
 git remote -v
+git pull --allow-unrelated-histories myyum master
