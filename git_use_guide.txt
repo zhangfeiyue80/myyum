@@ -1,0 +1,16 @@
+git config --global user.name "zhangfeiyue80"
+git config --global user.email "2247058872@qq.com"
+echo "# myyum" >> README.md
+git init
+git add README.md
+git commit -m "20180903"
+git remote add myyum https://github.com/zhangfeiyue80/myyum.git
+git remote add myyum https://github.com/zhangfeiyue80/myyum.git
+git remote add origin https://github.com/zhangfeiyue80/myyum.git
+git push origin master
+git push -u origin master
+zhangfeiyue80
+4zhangfeiyue
+
+
+git remote -v
