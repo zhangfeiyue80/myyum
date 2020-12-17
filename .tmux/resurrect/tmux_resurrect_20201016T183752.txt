@@ -1,0 +1,27 @@
+pane	cmd-0	0	:bash	0	:	0	:/root/priv	1	bash	:
+pane	cmd-0	1	:vim	0	:	0	:/root/DPX/src	1	vim	:vim -S
+pane	cmd-0	2	:bash	1	:*	0	:/root	1	bash	:
+pane	cmd-0	3	:bash	0	:	0	:/root/DPX/build/Linux-amd64/rel/bin	1	bash	:
+pane	cmd-0	4	:bash	0	:-	0	:/home/test/zfy/shell	1	bash	:su -l test
+pane	cmd-0	5	:bash	0	:	0	:/etc/sysconfig/network-scripts	1	bash	:
+pane	cmd-0	6	:bash	0	:	0	:/opt/DPX/logs\ (deleted)	1	bash	:
+pane	cmd-0	7	:bash	0	:	0	:/etc/sysconfig/network-scripts	1	bash	:
+pane	dpx-1	0	:bash	0	:	0	:/root/DPX/src	1	bash	:
+pane	dpx-1	1	:bash	0	:	0	:/root/DPX/src	1	bash	:
+pane	dpx-1	2	:bash	0	:-	0	:/root/DPX/src	1	bash	:
+pane	dpx-1	3	:vim	1	:*	0	:/root/DPX/src/DMFX/br	1	vim	:vim ./dmbrmain.c
+pane	dpx-1	4	:bash	0	:	0	:/root	1	bash	:
+window	cmd-0	0	0	:	c9be,196x56,0,0,1
+window	cmd-0	1	0	:	c9bf,196x56,0,0,2
+window	cmd-0	2	1	:*	c9c0,196x56,0,0,3
+window	cmd-0	3	0	:	c9c1,196x56,0,0,4
+window	cmd-0	4	0	:-	c9c2,196x56,0,0,5
+window	cmd-0	5	0	:	c9c3,196x56,0,0,6
+window	cmd-0	6	0	:	c9c4,196x56,0,0,7
+window	cmd-0	7	0	:	6512,196x56,0,0,13
+window	dpx-1	0	0	:	c9c5,196x56,0,0,8
+window	dpx-1	1	0	:	c9c6,196x56,0,0,9
+window	dpx-1	2	0	:-	650f,196x56,0,0,10
+window	dpx-1	3	1	:*	6510,196x56,0,0,11
+window	dpx-1	4	0	:	6511,196x56,0,0,12
+state	cmd-0	

@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/root/DPX/src'
+let g:netrw_dirhist_2='/root/DPX/src/BEXSMO'
+let g:netrw_dirhist_3='/root/DPX/src'
+let g:netrw_dirhist_4='/root/DPX/src/NIBBLER'
+let g:netrw_dirhist_5='/root/DPX/src/NIBBLER/cracker'
+let g:netrw_dirhist_6='/root/DPX/src'
+let g:netrw_dirhist_7='/root/usr/openvpn/etc'
+let g:netrw_dirhist_8='/root/priv/software/vim'
+let g:netrw_dirhist_9='/root/compile/src/NIBBLER/server'

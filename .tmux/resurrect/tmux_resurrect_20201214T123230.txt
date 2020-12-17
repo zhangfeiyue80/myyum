@@ -1,0 +1,59 @@
+pane	YX-compile-4	0	:bash	0	:-	0	:/root/compile/src/NIBBLER/server	1	zsh	:zsh
+pane	YX-compile-4	1	:compile	0	:	0	:/root	1	bash	:zsh
+pane	YX-compile-4	2	:compile-log	0	:	0	:/	1	bash	:zsh
+pane	YX-compile-4	3	:bash	0	:	0	:/	1	bash	:zsh
+pane	YX-compile-4	4	:bash-code	0	:	0	:/	1	bash	:zsh
+pane	YX-compile-4	5	:bash	1	:*	0	:/	1	bash	:zsh
+pane	YX-compile-4	6	:bash	0	:	0	:/root/priv/shell	1	bash	:/usr/bin/bash ./YX-compile.sh
+pane	YX-compile-4	7	:zsh	0	:	0	:/root/compile/build/Linux26-amd64/rel/bin	1	zsh	:zsh
+pane	cmd-0	0	:bash	1	:*	0	:/opt/DPX/uninstall\ (deleted)	1	zsh	:zsh
+pane	cmd-0	1	:vim	0	:	0	:/root	1	zsh	:zsh
+pane	cmd-0	2	:bash	0	:-	0	:/etc/udev/rules.d	1	zsh	:zsh
+pane	cmd-0	3	:bash	0	:	0	:/root/DPX/src	1	zsh	:zsh
+pane	cmd-0	4	:bash	0	:	0	:/root/DPX/src	1	bash	:
+pane	cmd-0	5	:bash	0	:	0	:/root/DPX/build/Linux26-amd64/rel	1	zsh	:zsh
+pane	cmd-0	6	:bash	0	:	0	:/root	1	zsh	:zsh
+pane	cmd-0	7	:bash	0	:	0	:/root/priv/software/vim	1	zsh	:zsh
+pane	cmd-0	8	:zsh	0	:	0	:/root/DPX/src/NIBBLER	1	zsh	:zsh
+pane	cmd-0	9	:zsh	0	:	0	:/root	1	zsh	:zsh
+pane	cmd-0	10	:bash	0	:	0	:/root/tmp	1	bash	:
+pane	code-1	0	:zsh	0	:	0	:/root/DPX/src	1	zsh	:zsh
+pane	code-1	1	:bash	0	:	0	:/root/DPX/src	1	bash	:
+pane	code-1	2	:bash	0	:-	0	:/root/DPX/src/NIBBLER/server	1	bash	:
+pane	code-1	3	:bash	0	:	0	:/root/DPX/src/NIBBLER	1	bash	:
+pane	code-1	4	:bash	1	:*	0	:/opt/DPX/bin\ (deleted)	1	bash	:
+pane	code-1	5	:bash	0	:	0	:/root/tmp/test	1	bash	:
+pane	indian-vstor-5	0	:zsh	0	:-	0	:/root/dev	1	zsh	:zsh
+pane	indian-vstor-5	1	:zsh	1	:*	0	:/root	1	zsh	:zsh
+pane	indian-vstor-5	2	:zsh	0	:	0	:/root	1	zsh	:zsh
+pane	indian-vstor-5	3	:zsh	0	:	0	:/root/dev	1	zsh	:zsh
+window	YX-compile-4	0	0	:-	e211,158x45,0,0,22
+window	YX-compile-4	1	0	:	e212,158x45,0,0,23
+window	YX-compile-4	2	0	:	e213,158x45,0,0,24
+window	YX-compile-4	3	0	:	e214,158x45,0,0,25
+window	YX-compile-4	4	0	:	e215,158x45,0,0,26
+window	YX-compile-4	5	1	:*	e216,158x45,0,0,27
+window	YX-compile-4	6	0	:	e214,158x45,0,0,44
+window	YX-compile-4	7	0	:	e218,158x45,0,0,48
+window	cmd-0	0	1	:*	c3bd,158x45,0,0,0
+window	cmd-0	1	0	:	c3be,158x45,0,0,1
+window	cmd-0	2	0	:-	c3bf,158x45,0,0,2
+window	cmd-0	3	0	:	c3c2,158x45,0,0,5
+window	cmd-0	4	0	:	c3c3,158x45,0,0,6
+window	cmd-0	5	0	:	6215,158x45,0,0,16
+window	cmd-0	6	0	:	c3c5,158x45,0,0,8
+window	cmd-0	7	0	:	c3c6,158x45,0,0,9
+window	cmd-0	8	0	:	620f,158x45,0,0,10
+window	cmd-0	9	0	:	6210,158x45,0,0,11
+window	cmd-0	10	0	:	e216,158x45,0,0,46
+window	code-1	0	0	:	c3c0,158x45,0,0,3
+window	code-1	1	0	:	c3c1,158x45,0,0,4
+window	code-1	2	0	:-	6211,158x45,0,0,12
+window	code-1	3	0	:	6212,158x45,0,0,13
+window	code-1	4	1	:*	6213,158x45,0,0,14
+window	code-1	5	0	:	e210,158x45,0,0,40
+window	indian-vstor-5	0	0	:-	6211,158x45,0,0,31
+window	indian-vstor-5	1	1	:*	e217,158x45,0,0,28
+window	indian-vstor-5	2	0	:	6218,158x45,0,0,38
+window	indian-vstor-5	3	0	:	6211,158x45,0,0,50
+state	cmd-0	YX-compile-4
