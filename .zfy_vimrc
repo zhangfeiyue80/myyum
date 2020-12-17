@@ -1,0 +1,155 @@
+
+" 20200423 zfy
+set ts=4
+set nonu
+set expandtab
+set autoindent
+set cindent
+set t_Co=256
+"set wildmode=list:longest
+set wildmode=list:full
+colorscheme desert
+"set t_Co=8
+set cscopequickfix=s-,c-,d-,i-,t-,e-,g-
+nmap <C-\>vs :vert scs find s <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>vg :vert scs find g <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>vc :vert scs find c <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>vt :vert scs find t <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>ve :vert scs find e <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>vf :vert scs find f <C-R>=expand("<cfile>")<CR><CR>	
+nmap <C-\>vi :vert scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>	
+nmap <C-\>vd :vert scs find d <C-R>=expand("<cword>")<CR><CR>
+
+" gtags setting 
+set cscopetag " 使用 cscope 作为 tags 命令
+set cscopeprg='gtags-cscope' " 使用 gtags-cscope 代替 cscope
+"gtags.vim 设置项
+let GtagsCscope_Auto_Load = 1
+let CtagsCscope_Auto_Map = 1
+let GtagsCscope_Quiet = 1
+
+" clang-format(llvm, google, chromium, mozilla)
+"let g:clang_format#code_style = 'google'
+let g:clang_format#code_style = 'llvm'
+
+" cmd vi tabs echo number
+set tabline=%!MyTabLine()  " custom tab pages line
+function MyTabLine()
+    let s = '' " complete tabline goes here
+    " loop through each tab page
+    for t in range(tabpagenr('$'))
+        " set highlight
+        if t + 1 == tabpagenr()
+            let s .= '%#TabLineSel#'
+        else
+            let s .= '%#TabLine#'
+        endif
+        " set the tab page number (for mouse clicks)
+        let s .= '%' . (t + 1) . 'T'
+        let s .= ' '
+        " set page number string
+        let s .= t + 1 . ' '
+        " get buffer names and statuses
+        let n = ''      "temp string for buffer names while we loop and check buftype
+        let m = 0       " &modified counter
+        let bc = len(tabpagebuflist(t + 1))     "counter to avoid last ' '
+        " loop through each buffer in a tab
+        for b in tabpagebuflist(t + 1)
+            " buffer types: quickfix gets a [Q], help gets [H]{base fname}
+            " others get 1dir/2dir/3dir/fname shortened to 1/2/3/fname
+            if getbufvar( b, "&buftype" ) == 'help'
+                let n .= '[H]' . fnamemodify( bufname(b), ':t:s/.txt$//' )
+            elseif getbufvar( b, "&buftype" ) == 'quickfix'
+                let n .= '[Q]'
+            else
+                let n .= pathshorten(bufname(b))
+            endif
+            " check and ++ tab's &modified count
+            if getbufvar( b, "&modified" )
+                let m += 1
+            endif
+            " no final ' ' added...formatting looks better done later
+            if bc > 1
+                let n .= ' '
+            endif
+            let bc -= 1
+        endfor
+        " add modified label [n+] where n pages in tab are modified
+        if m > 0
+            let s .= '[' . m . '+]'
+        endif
+        " select the highlighting for the buffer names
+        " my default highlighting only underlines the active tab
+        " buffer names.
+        if t + 1 == tabpagenr()
+            let s .= '%#TabLineSel#'
+        else
+            let s .= '%#TabLine#'
+        endif
+        " add buffer names
+        if n == ''
+            let s.= '[New]'
+        else
+            let s .= n
+        endif
+        " switch to no underlining and add final space to buffer list
+        let s .= ' '
+    endfor
+    " after the last tab fill with TabLineFill and reset tab page nr
+    let s .= '%#TabLineFill#%T'
+    " right-align the label to close the current tab page
+    if tabpagenr('$') > 1
+        let s .= '%=%#TabLineFill#999Xclose'
+    endif
+    return s
+endfunction
+
+" fix chinese no parsing
+"set fileencodings=utf-8,chinese,cp936,ucs-bom
+set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
+
+set cursorline
+"highlight CursorLine   cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE
+highlight CursorLine   cterm=NONE ctermbg=235 ctermfg=NONE guibg=NONE guifg=NONE
+
+" tagbar set 
+" nmap <silent> <F4> :TagbarToggle<CR>  
+let g:tagbar_ctags_bin = 'ctags'  
+let g:tagbar_width = 40 
+let g:tagbar_left = 1
+
+" LeaderFunction
+nmap \F :LeaderfFunction!<CR>
+nmap \Fs :LeaderfFunction<CR>
+
+" don't show the help in normal mode
+let g:Lf_HideHelp = 1
+let g:Lf_UseCache = 0
+let g:Lf_UseVersionControlTool = 0
+let g:Lf_IgnoreCurrentBufferName = 1
+" popup mode
+let g:Lf_WindowPosition = 'popup'
+let g:Lf_PreviewInPopup = 1
+let g:Lf_StlSeparator = { 'left': "\ue0b0", 'right': "\ue0b2", 'font': "DejaVu Sans Mono for Powerline" }
+let g:Lf_PreviewResult = {'Function': 0, 'BufTag': 0 }
+
+let g:Lf_ShortcutF = "<leader>ff"
+noremap <leader>fb :<C-U><C-R>=printf("Leaderf buffer %s", "")<CR><CR>
+noremap <leader>fm :<C-U><C-R>=printf("Leaderf mru %s", "")<CR><CR>
+noremap <leader>ft :<C-U><C-R>=printf("Leaderf bufTag %s", "")<CR><CR>
+noremap <leader>fl :<C-U><C-R>=printf("Leaderf line %s", "")<CR><CR>
+
+noremap <C-B> :<C-U><C-R>=printf("Leaderf! rg --current-buffer -e %s ", expand("<cword>"))<CR>
+noremap <C-F> :<C-U><C-R>=printf("Leaderf! rg -e %s ", expand("<cword>"))<CR>
+" search visually selected text literally
+xnoremap gf :<C-U><C-R>=printf("Leaderf! rg -F -e %s ", leaderf#Rg#visual())<CR>
+noremap go :<C-U>Leaderf! rg --recall<CR>
+
+" should use `Leaderf gtags --update` first
+let g:Lf_GtagsAutoGenerate = 0
+let g:Lf_Gtagslabel = 'native-pygments'
+noremap <leader>fr :<C-U><C-R>=printf("Leaderf! gtags -r %s --auto-jump", expand("<cword>"))<CR><CR>
+noremap <leader>fd :<C-U><C-R>=printf("Leaderf! gtags -d %s --auto-jump", expand("<cword>"))<CR><CR>
+noremap <leader>fo :<C-U><C-R>=printf("Leaderf! gtags --recall %s", "")<CR><CR>
+noremap <leader>fn :<C-U><C-R>=printf("Leaderf gtags --next %s", "")<CR><CR>
+noremap <leader>fp :<C-U><C-R>=printf("Leaderf gtags --previous %s", "")<CR><CR>
