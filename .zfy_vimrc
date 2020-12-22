@@ -10,6 +10,15 @@ set t_Co=256
 set wildmode=list:full
 colorscheme desert
 "set t_Co=8
+
+" status line
+set statusline=\%<%.50F\             "显示文件名和文件路径 (%<应该可以去掉)
+set statusline+=%=\[ft=%Y]%m%r%h%w\ %*        "显示文件类型及文件状态
+set statusline+=\[ff=%{&ff}]\ [fenc=%{&fenc}]\ %*   "显示文件编码类型
+set statusline+=\ row:%l/%L\ col:%c\ %*   "显示光标所在行和列
+set statusline+=\%3p%%\%*            "显示光标前文本所占总文本的比例
+set laststatus=2
+
 set cscopequickfix=s-,c-,d-,i-,t-,e-,g-
 nmap <C-\>vs :vert scs find s <C-R>=expand("<cword>")<CR><CR>
 nmap <C-\>vg :vert scs find g <C-R>=expand("<cword>")<CR><CR>
