@@ -121,6 +121,10 @@ setopt extendedglob
 
 ################################################################
 
+# set proxy
+#export http_proxy="http://192.168.78.21:8888"
+#export https_proxy="https://192.168.78.21:8888"
+
 # need stay last
 source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
