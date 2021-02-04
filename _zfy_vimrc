@@ -106,6 +106,10 @@ set guitablabel=%{GuiTabLabel()}
 "au GUIEnter * simalt ~x
 autocmd GUIEnter * simalt ~x
 
+" 快速切换最近标签页
+autocmd TabLeave * let g:lastTabNr = tabpagenr()
+nnoremap <leader>t :exec "tabnext ".g:lastTabNr<CR>
+
 syntax on
 set ruler
 
@@ -133,7 +137,7 @@ set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 "set guifont=YaHei_Consolas_Hybrid:h10:cANSI:qDRAFT
 "set guifont=JetBrains_Mono:h8:b:cANSI:qDRAFT
 "set guifont=JetBrains_Mono:h7:cANSI:qDRAFT
-set guifont=JetBrains_Mono:h8:cANSI:qDRAFT
+set guifont=JetBrains_Mono_NL:h9:cANSI:qDRAFT
 
 " 设置主题
 colorscheme desert
@@ -167,8 +171,8 @@ set tags=./.tags;,.tags
 set expandtab
 
 " status line
-set statusline=\%<%.50F\             "显示文件名和文件路径 (%<应该可以去掉)
-set statusline+=%=\[ft=%Y]%m%r%h%w\ %*        "显示文件类型及文件状态
+set statusline=\%<%.50F\ %m          "显示文件名和文件路径 (%<应该可以去掉)
+set statusline+=%=\[ft=%Y]%r%h%w\ %*        "显示文件类型及文件状态
 set statusline+=\[ff=%{&ff}]\ [fenc=%{&fenc}]\ %*   "显示文件编码类型
 set statusline+=\ row:%l/%L\ col:%c\ %*   "显示光标所在行和列
 set statusline+=\%3p%%\%*            "显示光标前文本所占总文本的比例
