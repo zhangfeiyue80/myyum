@@ -15,7 +15,7 @@ function MyTabLine()
         let s .= '%' . (t + 1) . 'T'
         let s .= ' '
         " set page number string
-        let s .= t + 1 . ' '
+        let s .= '[' . (t + 1) . ']' . ' '
         " get buffer names and statuses
         let n = ''      "temp string for buffer names while we loop and check buftype
         let m = 0       " &modified counter
@@ -110,6 +110,8 @@ autocmd GUIEnter * simalt ~x
 autocmd TabLeave * let g:lastTabNr = tabpagenr()
 nnoremap <leader>t :exec "tabnext ".g:lastTabNr<CR>
 
+" winnr() wincmd
+
 syntax on
 set ruler
 
@@ -178,6 +180,10 @@ set statusline+=\ row:%l/%L\ col:%c\ %*   "显示光标所在行和列
 set statusline+=\%3p%%\%*            "显示光标前文本所占总文本的比例
 set laststatus=2
 
+
+"set sessionoptions=blank,buffers,curdir,folds,help,options,tabpages,winsize,terminal
+set sessionoptions=blank,buffers,sesdir,folds,help,options,tabpages,winsize,terminal
+
 "" Taglist set
 ""let Tlist_Auto_Open=1
 "let Tlist_Ctags_Cmd = 'd:\bat\ctags.exe'
@@ -224,14 +230,15 @@ set cscopequickfix=s-,c-,d-,i-,t-,e-,a-,g-
 "nmap <C-\>i :scs find i <C-R>=expand("<cword>")<CR><CR>
 "nmap <C-\>d :scs find d <C-R>=expand("<cword>")<CR><CR>
  
-nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>
-nmap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>
-nmap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>
-nmap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>
-nmap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>
-nmap <C-\>f :cs find f <C-R>=expand("<cword>")<CR><CR>
-nmap <C-\>i :cs find i <C-R>=expand("<cword>")<CR><CR>
-nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>s :scs find s <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>g :scs find g <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>c :scs find c <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>t :scs find t <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>e :scs find e <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>f :scs find f <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>i :scs find i <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>d :scs find d <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>a :scs find a <C-R>=expand("<cword>")<CR><CR>
 
  
 nmap <C-\>vs :vert scs find s <C-R>=expand("<cword>")<CR><CR>
@@ -242,6 +249,7 @@ nmap <C-\>ve :vert scs find e <C-R>=expand("<cword>")<CR><CR>
 nmap <C-\>vf :vert scs find f <C-R>=expand("<cword>")<CR><CR>
 nmap <C-\>vi :vert scs find i <C-R>=expand("<cword>")<CR><CR>
 nmap <C-\>vd :vert scs find d <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>va :vert scs find a <C-R>=expand("<cword>")<CR><CR>
 
 nmap <C-\>gg :Gtags <C-R>=expand("<cword>")<CR><CR>
 nmap <C-\>gr :Gtags -r <C-R>=expand("<cword>")<CR><CR>
