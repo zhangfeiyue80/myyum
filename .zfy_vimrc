@@ -5,6 +5,8 @@ set nonu
 set expandtab
 set autoindent
 set cindent
+set nobackup
+set noundofile
 set t_Co=256
 "set wildmode=list:longest
 set wildmode=list:full
@@ -57,7 +59,7 @@ function MyTabLine()
         let s .= '%' . (t + 1) . 'T'
         let s .= ' '
         " set page number string
-        let s .= t + 1 . ' '
+        let s .= '[' . (t + 1) . ']' . ' '
         " get buffer names and statuses
         let n = ''      "temp string for buffer names while we loop and check buftype
         let m = 0       " &modified counter
@@ -117,6 +119,12 @@ endfunction
 "set fileencodings=utf-8,chinese,cp936,ucs-bom
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 
+" 快速切换最近标签页
+autocmd TabLeave * let g:lastTabNr = tabpagenr()
+nnoremap <leader>t :exec "tabnext ".g:lastTabNr<CR>
+
+" winnr() wincmd
+
 set cursorline
 "highlight CursorLine   cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE
 highlight CursorLine   cterm=NONE ctermbg=235 ctermfg=NONE guibg=NONE guifg=NONE
@@ -124,7 +132,7 @@ highlight CursorLine   cterm=NONE ctermbg=235 ctermfg=NONE guibg=NONE guifg=NONE
 " tagbar set 
 " nmap <silent> <F4> :TagbarToggle<CR>  
 let g:tagbar_ctags_bin = 'ctags'  
-let g:tagbar_width = 40 
+let g:tagbar_width = 30 
 let g:tagbar_left = 1
 
 " LeaderFunction
